@@ -1,7 +1,7 @@
 import {
   createOpenAIModel,
   generateChatResponse,
-  createOllamaModel,
+  // createOllamaModel,
 } from '../services/ai-service';
 
 export default defineEventHandler(async (event) => {
@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
   const openaiApiKey = useRuntimeConfig().NUXT_OPENAI_API_KEY;
   const openaiModel = createOpenAIModel(openaiApiKey);
 
-  const ollamaModel = createOllamaModel();
+  // const ollamaModel = createOllamaModel();
 
   const response = await generateChatResponse(openaiModel, messages);
 
