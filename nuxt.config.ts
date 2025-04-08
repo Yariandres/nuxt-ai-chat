@@ -10,4 +10,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     NUXT_OPENAI_API_KEY: process.env.NUXT_OPENAI_API_KEY,
   },
+
+  mdc: {
+    highlight: {
+      theme: 'github-dark',
+      langs: ['html', 'markdown', 'vue', 'javascript', 'typescript'],
+    },
+  },
 });
