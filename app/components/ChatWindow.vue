@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import type { ChatMessage, Chat } from '../types/types';
 
-const props = defineProps<{ messages: ChatMessage[]; chat: Chat }>();
+const props = defineProps<{
+  messages: ChatMessage[];
+  chat: Chat;
+  typing: boolean;
+}>();
 
 const emit = defineEmits<{
   (e: 'send-message', message: string): void;
@@ -46,6 +50,7 @@ watch(() => props.messages, pinToBottom, { deep: true });
               {{ message.content }}
             </div>
           </div>
+          <span v-if="typing" class="typing-indicator">&#9611;</span>
         </div>
 
         <div class="message-form-container">
@@ -196,5 +201,23 @@ watch(() => props.messages, pinToBottom, { deep: true });
 
 .message-input::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+.typing-indicator {
+  display: inline-block;
+  animation: pulse 1s infinite;
+  margin-left: 0.25rem;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>
