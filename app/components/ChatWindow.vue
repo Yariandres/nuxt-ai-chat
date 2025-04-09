@@ -74,7 +74,6 @@ watch(() => props.messages, pinToBottom, { deep: true });
 </template>
 
 <style scoped>
-/* ===== Layout & Container Styles ===== */
 .scroll-container {
   overflow-y: auto;
   height: 100%;
@@ -86,7 +85,6 @@ watch(() => props.messages, pinToBottom, { deep: true });
   height: 100%;
 }
 
-/* ===== Header Styles ===== */
 .chat-header {
   margin-bottom: 1.5rem;
   padding: 1rem 0;
@@ -101,7 +99,6 @@ watch(() => props.messages, pinToBottom, { deep: true });
   color: var(--ui-text);
 }
 
-/* ===== Messages Container ===== */
 .messages-container {
   display: flex;
   flex-direction: column;
@@ -111,7 +108,6 @@ watch(() => props.messages, pinToBottom, { deep: true });
   padding-bottom: 8rem;
 }
 
-/* ===== Message Styles ===== */
 .message {
   padding: 1rem;
   border-radius: var(--ui-radius);
@@ -139,7 +135,6 @@ watch(() => props.messages, pinToBottom, { deep: true });
   overflow-wrap: break-word;
 }
 
-/* ===== Input Form Styles ===== */
 .message-form-container {
   position: fixed;
   bottom: 1.5rem;
@@ -162,7 +157,6 @@ watch(() => props.messages, pinToBottom, { deep: true });
   pointer-events: auto;
 }
 
-/* ===== Empty State Styles ===== */
 .empty-state {
   display: flex;
   align-items: center;
