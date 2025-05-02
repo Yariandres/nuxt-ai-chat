@@ -1,6 +1,3 @@
-import type { Project } from '~~/layers/chat/app/types/types';
-import useProjects from './useProjects';
-
 export default function useProject(projectId: string) {
   const { projects } = useProjects();
 
