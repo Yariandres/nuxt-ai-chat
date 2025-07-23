@@ -3,7 +3,7 @@ export default function useChat(chatId: string) {
   const chat = computed(() => chats.value.find((c) => c.id === chatId));
   const messages = computed<ChatMessage[]>(() => chat.value?.messages || []);
 
-  function createMessage(message: string, role: ChatMessage['role']) {
+  function createMessage(message: string, role: ChatMessage["role"]) {
     const id = messages.value.length.toString();
 
     return {
@@ -18,10 +18,10 @@ export default function useChat(chatId: string) {
   async function sendMessage(message: string) {
     if (!chat.value) return;
 
-    messages.value.push(createMessage(message, 'user'));
+    messages.value.push(createMessage(message, "user"));
 
-    const data = await $fetch<ChatMessage>('/api/ai', {
-      method: 'POST',
+    const data = await $fetch<ChatMessage>("/api/ai", {
+      method: "POST",
       body: {
         messages: messages.value,
       },

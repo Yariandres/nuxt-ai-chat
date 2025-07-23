@@ -1,6 +1,6 @@
 export interface ChatMessage {
   id: string;
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
   createdAt: Date;
   updatedAt: Date;
@@ -23,5 +23,5 @@ export interface Project {
 }
 
 export interface ChatWithProject extends Chat {
-  project: Project;
+  project: Project | null;
 }
