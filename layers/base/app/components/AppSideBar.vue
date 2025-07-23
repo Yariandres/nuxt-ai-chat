@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui';
-import type { Project, Chat } from '../../../chat/app/types/types';
+import type { NavigationMenuItem } from "@nuxt/ui";
 
 defineProps<{
   isOpen: boolean;
@@ -19,7 +18,7 @@ const chatsInCurrentProject = computed(() =>
 
 function formatProjectChat(project: Project, chat: Chat): NavigationMenuItem {
   return {
-    label: chat.title || 'Untitled Chat',
+    label: chat.title || "Untitled Chat",
     to: `/projects/${project.id}/chats/${chat.id}`,
     active: route.params.id === chat.id,
   };
@@ -79,7 +78,7 @@ const olderChats = filterChats(30);
 
 function formatChatItem(chat: Chat): NavigationMenuItem {
   return {
-    label: chat.title || 'Untitled Chat',
+    label: chat.title || "Untitled Chat",
     to: `/chats/${chat.id}`,
     active: route.params.id === chat.id,
   };
