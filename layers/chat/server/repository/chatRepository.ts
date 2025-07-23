@@ -1,5 +1,5 @@
-import { v4 as uuidv4 } from 'uuid';
-import { getProjectById } from './projectRepository';
+import { v4 as uuidv4 } from "uuid";
+import { getProjectById } from "./projectRepository";
 
 const chats: Chat[] = [MOCK_CHAT];
 
@@ -25,7 +25,7 @@ export async function createChat(data: {
   const now = new Date();
   const newChat: Chat = {
     id: uuidv4(),
-    title: data.title || 'New Chat',
+    title: data.title || "New Chat",
     projectId: data.projectId,
     messages: [],
     createdAt: now,
@@ -100,7 +100,7 @@ export function getMessagesByChatId(chatId: string): ChatMessage[] {
 
 export async function createMessageForChat(data: {
   content: string;
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   chatId: string;
 }): Promise<ChatMessage | null> {
   const chat = chats.find((c) => c.id === data.chatId);
